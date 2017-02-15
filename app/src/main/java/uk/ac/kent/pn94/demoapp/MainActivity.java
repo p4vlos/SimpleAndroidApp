@@ -28,15 +28,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Log.d(_TAG, "Button clicked");
+
                 //adding the string from nameField to userName string
                 String userName = nameField.getText().toString();
-                
+                Log.d(_TAG, "User name: " + userName);
 
                 //using intent to pass the string to the Output Activity from this activity.
                 Intent intent = new Intent(MainActivity.this, OutputActivity.class);
                 intent.putExtra("USER_MSG", userName);
                 //switching activities
                 startActivity(intent);
+                Log.d(_TAG, "Starting Output activity");
             }
         });
     }
